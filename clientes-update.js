@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 main().catch(err => console.log(err));
 
 async function main(){
-    await mongoose.connect('mongodb://127.0.0.1:27017/Clinica01');
+    await mongoose.connect('mongodb://127.0.0.1:27017/clinina');
 
     const PacienteScrema = new mongoose.Schema({
         nome: String,
@@ -16,7 +16,7 @@ async function main(){
 
     await Paciente.updateOne(
         {nome: 'Paulo Sousa'},
-        {$set: {telefone: '11111-5525', estado_civil: 'Solteiro'}}
+        {$set: {telefone: '968498-6343', estado_civil: 'Casado'}}
     )
 
     const pacientes = await (mongoose.model('Paciente', PacienteScrema)).find();
